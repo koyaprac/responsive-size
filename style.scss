@@ -1,19 +1,106 @@
 @import "compass";
 @include global-reset;
+@import url(https://fonts.googleapis.com/earlyaccess/mplus1p.css);
 
 
 
-$baseColor: #fdfcf6;
-$keyColor: #14c0c9;
+//https://www.canva.com/colors/combinations/nice-day-out/
+$baseColor: #F8F9F0;
+$subColor: #F9D976;
+$keyColor: #507BC9;
 
-body {
-  background-color: $baseColor;   // CSSにすると、$baseColorが#fdfcf6になる
+
+
+html{
+    //https://www.genius-web.co.jp/blog/cat-86/google-font.html
+    font-family: 'Mplus 1p', sans-serif;
+    font-size: 1.4rem;
+    color: #4c4c4c;
+    line-height: 1.6; 
+    letter-spacing: .1em;
 }
+
+body{
+    width: 100%;
+}
+
 div.header{
   background-image: url("images/ookawajengaIMGL1689_TP_V.jpg");
-  height: 400px;
+  height: 250px;
   width: 100%;
   background-size: cover;
   background-position: center center;
     
+}
+
+.attraction_box {
+    background-color: $subColor;
+    padding: 40px 0;
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+    
+    .container{
+        @include display-flex;
+        justify-content: space-between;
+        @include flex-direction(column);
+        
+        .attraction{
+            background-color: $baseColor;
+            @include flex(1);
+            margin: 7px 10px;
+            @include box-sizing(border-box);
+            @include border-radius(4px);
+            
+            .attractin_head{
+                background-color:#C9DEF0; //#E0F8E6
+                width : 100%;
+                padding: 15px 0;
+                h3 {
+                    text-align: center;
+                    font-size: 1.4rem;
+                }
+            }
+            .attraction_cont{
+                padding: 10px;
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+.foot{
+    padding: 40px 0;
+    background-color: $baseColor;
+    text-align: center;
+    
+    h3{
+        margin-bottom: 30px;
+    }
+    .entry-button{
+        background-color: $keyColor;
+        display: block;
+        text-decoration: none;
+        color: white;
+        width: 400px;
+        height: 20px;
+        padding: 10px;
+        margin: 10px auto;
+        @include border-radius(5px);
+    }
+}
+
+@media (min-width: 769px) {
+    div.header{
+      height: 500px;
+    }
+    .attraction_box{
+        .container{
+            @include flex-direction(row);
+        }
+    }
 }
