@@ -1,0 +1,19 @@
+@import "compass";
+@include global-reset;
+
+
+
+$baseColor: #fdfcf6;
+$keyColor: #14c0c9;
+
+body {
+  background-color: $baseColor;   // CSSにすると、$baseColorが#fdfcf6になる
+}
+div.header{
+  background-image: url("images/ookawajengaIMGL1689_TP_V.jpg");
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+    
+}
